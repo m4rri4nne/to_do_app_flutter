@@ -18,7 +18,7 @@ class _WelcomeState extends State<Welcome> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -54,53 +54,53 @@ class _WelcomeState extends State<Welcome> {
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.center,
-                      runAlignment: WrapAlignment.center,
-                      children: [
-                        Text(
-                          'Lorem ipsum dolor sit amet, consectetur \nadipiscing elit. Interdum dictum tempus,\n interdum at dignissim metus. Ultricies sed\n nunc.',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Lorem ipsum dolor sit amet, consectetur \nadipiscing elit. Interdum dictum tempus,\n interdum at dignissim metus. Ultricies sed\n nunc.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 12,
                         ),
-                      ],
-                    ),
-                  ],
-                )
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-            TextButton(
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(Colors.amber.shade900),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.amber.shade900),
+                ),
+                onPressed: action,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Get Start',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                      size: 25,
+                    )
+                  ],
+                ),
               ),
-              onPressed: action,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Get Start',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                    size: 25,
-                  )
-                ],
-              ),
-            ),
+            )
           ],
         ),
       ),

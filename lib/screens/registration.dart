@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 
 class Registration extends StatefulWidget {
-  const Registration({super.key});
+  const Registration({Key? key}) : super(key: key);
 
   @override
   State<Registration> createState() => _RegistrationState();
 }
 
 class _RegistrationState extends State<Registration> {
-  void action() {}
+  void action() {
+    //navigation logic
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           children: <Widget>[
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image(
@@ -28,7 +30,7 @@ class _RegistrationState extends State<Registration> {
                 ),
               ],
             ),
-            Column(
+            const Column(
               children: [
                 Column(
                   children: [
@@ -36,21 +38,11 @@ class _RegistrationState extends State<Registration> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Get’s things done',
+                          'Get’s things done \n with TODO',
                           style: TextStyle(
                             fontSize: 24,
                           ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'with TODO',
-                          style: TextStyle(
-                            fontSize: 24,
-                          ),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -69,13 +61,14 @@ class _RegistrationState extends State<Registration> {
                 ),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TextField(
+            const Column(children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+                child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
                       borderSide: BorderSide.none,
                     ),
                     hintText: 'Enter your full name',
@@ -85,12 +78,17 @@ class _RegistrationState extends State<Registration> {
                     ),
                     filled: true,
                     fillColor: Colors.white,
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 16, horizontal: 30),
                   ),
                 ),
-                TextField(
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
+                child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
                       borderSide: BorderSide.none,
                     ),
                     hintText: 'Enter your email',
@@ -100,12 +98,17 @@ class _RegistrationState extends State<Registration> {
                     ),
                     filled: true,
                     fillColor: Colors.white,
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                   ),
                 ),
-                TextField(
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
+                child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
                       borderSide: BorderSide.none,
                     ),
                     hintText: 'Enter password',
@@ -115,12 +118,17 @@ class _RegistrationState extends State<Registration> {
                     ),
                     filled: true,
                     fillColor: Colors.white,
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                   ),
                 ),
-                TextField(
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
+                child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
+                      borderRadius: BorderRadius.all(Radius.circular(25)),
                       borderSide: BorderSide.none,
                     ),
                     hintText: 'Confirm Password',
@@ -130,10 +138,40 @@ class _RegistrationState extends State<Registration> {
                     ),
                     filled: true,
                     fillColor: Colors.white,
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                   ),
                 ),
-              ],
+              ),
+            ]),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 15.0, right: 15.0, top: 30, bottom: 15),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.amber.shade900),
+                ),
+                onPressed: action,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Register',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text('Already have an account ? Sign In')],
+            )
           ],
         ),
       ),
