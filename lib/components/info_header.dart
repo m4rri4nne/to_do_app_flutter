@@ -8,7 +8,7 @@ class InfoHeader extends StatefulWidget {
 }
 
 class _InfoHeaderState extends State<InfoHeader> {
-  void action() {
+  void logout() {
     Navigator.pushNamed(context, '/');
   }
 
@@ -52,7 +52,7 @@ class _InfoHeaderState extends State<InfoHeader> {
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.amber.shade900),
                     ),
-                    onPressed: action,
+                    onPressed: logout,
                     child: const Text(
                       'Logout',
                       style: TextStyle(

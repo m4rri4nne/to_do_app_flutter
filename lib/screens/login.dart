@@ -13,11 +13,16 @@ class _LoginState extends State<Login> {
     Navigator.pushNamed(context, '/dashboard');
   }
 
+  void register() {
+    Navigator.pushNamed(context, '/registration');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(
@@ -100,10 +105,22 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Don’t have an account ? Sign Up')],
-            )
+              children: [
+                const Text('Don’t have an account? '),
+                GestureDetector(
+                  onTap: register,
+                  child: const Text(
+                    "Sign up",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),

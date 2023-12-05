@@ -9,8 +9,12 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-  void action() {
+  void login() {
     Navigator.pushNamed(context, '/login');
+  }
+
+  void registered() {
+    Navigator.pushNamed(context, '/dashboard');
   }
 
   @override
@@ -18,6 +22,7 @@ class _RegistrationState extends State<Registration> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(
@@ -93,7 +98,7 @@ class _RegistrationState extends State<Registration> {
                   backgroundColor:
                       MaterialStateProperty.all(Colors.amber.shade900),
                 ),
-                onPressed: action,
+                onPressed: registered,
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -109,9 +114,21 @@ class _RegistrationState extends State<Registration> {
                 ),
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Already have an account ? Sign In')],
+              children: [
+                const Text('Already have an account? '),
+                GestureDetector(
+                  onTap: login,
+                  child: const Text(
+                    "Sign in",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
