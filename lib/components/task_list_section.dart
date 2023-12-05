@@ -3,13 +3,12 @@ import 'package:to_do_app_flutter/components/list_item.dart';
 
 class TaskListSection extends StatefulWidget {
   const TaskListSection({super.key});
-
   @override
   State<TaskListSection> createState() => _TaskListSectionState();
 }
 
 class _TaskListSectionState extends State<TaskListSection> {
-  void addTask() {}
+  final TextEditingController _textController = TextEditingController();
 
   final List<String> items = [
     "Cook Rice and Chicken at 10 am",
@@ -18,6 +17,46 @@ class _TaskListSectionState extends State<TaskListSection> {
     "Learn HTML and CSS at 3pm",
     "Have dinner at 8pm"
   ];
+  void action() {
+    setState(() {
+      items.add(_textController.text);
+    });
+    Navigator.of(context).pop();
+  }
+
+  // Modal
+  void addTaskModal() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            content: TextField(
+              decoration: const InputDecoration(
+                hintText: "New Task",
+                hintStyle: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                ),
+                filled: false,
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+              ),
+              controller: _textController,
+            ),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+            ),
+            backgroundColor: Colors.white,
+            actions: [
+              TextButton(
+                onPressed: action,
+                child: const Text("Add new task"),
+              )
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,7 +87,7 @@ class _TaskListSectionState extends State<TaskListSection> {
                 ),
               ),
               TextButton(
-                onPressed: addTask,
+                onPressed: addTaskModal,
                 child: const Icon(
                   Icons.add_circle_outline,
                   color: Colors.amber,
