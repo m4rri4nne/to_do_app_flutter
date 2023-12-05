@@ -8,7 +8,9 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-  void action() {}
+  void action() {
+    Navigator.pushNamed(context, '/registration');
+  }
 
   @override
   Widget build(BuildContext context) {

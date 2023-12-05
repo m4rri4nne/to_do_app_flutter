@@ -32,7 +32,14 @@ class _ListItemState extends State<ListItem> {
             });
           },
         ),
-        Text(widget.item),
+        Text(
+          widget.item,
+          style: const TextStyle(
+            fontFamily: "Poppins-Regular",
+            fontSize: 12,
+            color: Colors.black87,
+          ),
+        ),
       ],
     );
   }

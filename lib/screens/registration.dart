@@ -9,8 +9,9 @@ class Registration extends StatefulWidget {
 
 class _RegistrationState extends State<Registration> {
   void action() {
-    //navigation logic
+    Navigator.pushNamed(context, '/dashboard');
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
