@@ -8,14 +8,18 @@ class InfoHeader extends StatefulWidget {
 }
 
 class _InfoHeaderState extends State<InfoHeader> {
+  void action() {
+    Navigator.pushNamed(context, '/');
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
           children: [
-            ClipOval(
+            const ClipOval(
               child: Image(
                 image: AssetImage('images/icon.jpeg'),
                 width: 80.0,
@@ -23,11 +27,11 @@ class _InfoHeaderState extends State<InfoHeader> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+              padding: const EdgeInsets.only(
+                  left: 15.0, right: 15.0, top: 10.0, bottom: 30.0),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     "Alicia de Paula",
                     style: TextStyle(
                       fontFamily: 'Poppins-Bold',
@@ -35,7 +39,7 @@ class _InfoHeaderState extends State<InfoHeader> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "@m4rri4nne",
                     style: TextStyle(
                         fontSize: 10,
@@ -43,6 +47,21 @@ class _InfoHeaderState extends State<InfoHeader> {
                         fontFamily: "Poppins-Regular",
                         fontWeight: FontWeight.w600),
                   ),
+                  TextButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.amber.shade900),
+                    ),
+                    onPressed: action,
+                    child: const Text(
+                      'Logout',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: "Poppins-Regular",
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),

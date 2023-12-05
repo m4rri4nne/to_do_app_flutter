@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app_flutter/components/input_item.dart';
 
 class Registration extends StatefulWidget {
   const Registration({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class Registration extends StatefulWidget {
 
 class _RegistrationState extends State<Registration> {
   void action() {
-    Navigator.pushNamed(context, '/dashboard');
+    Navigator.pushNamed(context, '/login');
   }
 
   @override
@@ -66,88 +67,27 @@ class _RegistrationState extends State<Registration> {
               Padding(
                 padding: EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(25)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: 'Enter your full name',
-                    hintStyle: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 13,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 16, horizontal: 30),
-                  ),
-                ),
+                child: InputItem(hintText: 'Enter your full name'),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(25)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: 'Enter your email',
-                    hintStyle: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 13,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                  ),
-                ),
+                padding: EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+                child: InputItem(hintText: 'Enter your email'),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(25)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: 'Enter password',
-                    hintStyle: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 13,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                  ),
-                ),
+                padding: EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+                child: InputItem(hintText: 'Enter password'),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(25)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: 'Confirm Password',
-                    hintStyle: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 13,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                  ),
-                ),
+                padding: EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+                child: InputItem(hintText: 'Confirm password'),
               ),
             ]),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 30, bottom: 15),
+                  left: 15.0, right: 15.0, top: 25, bottom: 15),
               child: TextButton(
                 style: ButtonStyle(
                   backgroundColor:

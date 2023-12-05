@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app_flutter/components/input_item.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -9,8 +10,9 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   void action() {
-    //navigation logic
+    Navigator.pushNamed(context, '/dashboard');
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,35 +65,15 @@ class _LoginState extends State<Login> {
             ),
             const Column(
               children: [
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: 'Enter your email',
-                    hintStyle: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 13,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+                  child: InputItem(hintText: 'Enter your email'),
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: 'Enter password',
-                    hintStyle: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 13,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+                  child: InputItem(hintText: 'Enter your password'),
                 ),
               ],
             ),
