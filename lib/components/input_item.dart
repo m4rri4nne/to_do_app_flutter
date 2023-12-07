@@ -10,6 +10,7 @@ class InputItem extends StatefulWidget {
 }
 
 class _InputItemState extends State<InputItem> {
+  final TextEditingController _inputedText = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -28,6 +29,7 @@ class _InputItemState extends State<InputItem> {
         contentPadding:
             const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       ),
+      controller: _inputedText,
     );
   }
 }

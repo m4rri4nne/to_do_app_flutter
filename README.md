@@ -1,16 +1,3 @@
-# to_do_app_flutter
+# To do App com flutter 
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Primeiro app desenvolvido usando Flutter, focado em aprender em como é criado os elementos, navegação entre os componentes(sem validação), baseado neste [design](https://www.figma.com/file/t4JYEWs7cIsuiTlZIXtw6T/To-Do-List-UI-Design-(Community)?type=design&mode=design&t=PAYoTmB4p4315aZO-0)
